@@ -216,3 +216,58 @@ public interface Calculator {
  }
  
  }
+ -------------------------------------------------------------------------------
+ Interface is a type.
+ Interface is a non primitive type. 
+ Interface provides the methods which the class needs to implement.If we are making the class
+ to implement the interface.
+ Interface variables are public, static and final.
+ Interface methods are public and abstract.
+ We cannot create an object interface.
+ But interface reference variable can be created which can store the reference of the
+ object of the class which has implemented the interface.
+ The class which is implementing the interface can have its own method. 
+ 
+ public interface ICalculator {
+  int add(int a,int b);
+ }
+ 
+ public class Number implements ICalculator {
+ 
+public int add(int a,int b){
+return a+b;
+}
+
+public void display(){
+System.out.println("I am the display method");
+}
+
+}
+
+public class Tester {
+  public static void main(String args[]){
+      ICalculator calculator=new Number();  // Type conversion
+	  System.out.println(calculator.add(10,20));
+	  calculator.display();  // As we dont have display method in the
+	  // calculator we wont be able call.
+	  Number number2=(Number)calculator; // type casting
+	  number2.display();
+	  ((Number)calculator).display();
+	  Number number=new Number();
+	  System.out.println(number.add(10,20));
+	  number.display();
+  }
+  
+  ------------------------------------------------------
+  
+  default is a keyword which when attached to an interface method, allows 
+  us to provide an implementation for that method. With this, we can add 
+  additional methods in any interface without disturbing the classes which 
+  have already implemented the interface. 
+  This method can be overridden in the implementing classes if need be.
+  ------------------------------------------------------------
+  static is another keyword introduced which allow us to provide an implementation
+  to the method it is attached to. The difference between static and default is that a
+  method having default keyword can be overridden, whereas, one having static cannot.
+  
+  
