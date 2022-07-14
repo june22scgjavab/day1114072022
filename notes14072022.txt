@@ -1,0 +1,176 @@
+public class Data {
+   private int num1;
+   private int num2;
+   
+    public void getData(){
+	 num1=20;
+	 num2=30
+	}
+	
+}
+
+public class DataMain{
+ public static void main(String args[]){
+ Data data=new Data();
+ d.getData();   // From the perspective of DataMain we are not able to directly into
+                // implementation 
+ }
+ }
+ ---------------------------------------------------------------
+ public class Data {
+   int num1;
+   int num2;
+   
+    public void getData(){
+	 num1=20;
+	 num2=30
+	}
+	
+}
+
+public class DataMain{
+ public static void main(String args[]){
+ Data data=new Data();
+ data.num1=10;
+ data.num2=20;
+ }
+ }
+ 
+ // In the above code we are not having abstraction for storing values in num1 and num2
+ 
+ -------------------------------------------------------------------------------------
+ import java.util.Scanner;
+ public class Data {
+   private int num1;
+   private int num2;
+   
+    public void getData(){
+	 Scanner scan=new Scanner(System.in);
+	 num1=scan.nextInt();
+	 num2=scan.nextInt();
+	}
+	
+}
+
+public class DataMain{
+ public static void main(String args[]){
+ Data data=new Data();
+ d.getData();   // From the perspective of DataMain we are not able to directly into
+                // implementation 
+ }
+ }
+ ----------------------------------------------------
+ import java.util.Scanner;
+ public class Data {
+    int num1;
+    int num2;
+   
+   /* public void getData(){
+	 Scanner scan=new Scanner(System.in);
+	 num1=scan.nextInt();
+	 num2=scan.nextInt();
+	} */
+	
+}
+
+public class DataMain{
+ public static void main(String args[]){
+ Data data=new Data();
+ Scanner scan=new Scanner(System.in);
+ 	 data.num1=scan.nextInt();
+	 data.num2=scan.nextInt();
+ }
+ }
+ ------------------------------------------------------------------------------------------
+ Abstraction is implemented through 
+ * Abstract class
+ * Interface
+ The abstract keyword signifies that something is not complete. It can be used with
+ classes and methods.
+ 
+ An abstract class is a class that is incomplete. It cannot be instantiated.
+For it to be used, an abstract class has to be made complete by extending it.
+
+abstract class Shape{}
+
+Shape shape=new Shape(); // So I cannot create an object of abstract class because 
+the class is incomplete.
+
+abstract class Shape{
+
+abstract float areaCalculate(); // A class containing an abstract method is declared as
+// abstract. Abstract method dont have implementation. 
+
+}
+
+A class having atleast one abstract method should be 
+declared as abstract. But it is also possible that we
+declare a class as an abstract without having an abstract
+method.
+
+abstract class MyAbstractClass {}
+
+----------------------------------------------------------------------------
+Abstract class are the Parent class which should be sub-classed.
+
+abstract class Shape {
+ protected float x;
+ protected float y;
+ 
+ public void setX(float x){
+  this.x=x;
+ }
+ 
+ public float getX(){
+ return x;
+ }
+ 
+ public abstract float calculateArea();
+ 
+}
+
+// When a class which is not an abstract class ( concrete class ) is inheriting an
+// abstract class , it needs to override the abstract method of the abstract class.
+public class Triangle extends Shape {
+
+public float calculateArea(){
+ float area=(x*y)/2;
+ return area;
+}
+
+}
+---------------------------------------------------------------------------------
+
+abstract class Shape {
+ protected float x;
+ protected float y;
+ 
+ public void setX(float x){
+  this.x=x;
+ }
+ 
+ public float getX(){
+ return x;
+ }
+ 
+ public abstract float calculateArea();
+ 
+}
+
+// Suppose the subclass is not implementing the abstract method of
+// abstract class, the sub class also needs to be declared
+// as an abstract otherwise it will show compilation error.
+// So to convey to the compiler that this class is also incomplete as in the
+// sense it failed in implementing/overriding the abstract method of the abstract class
+// which it inherited.
+public abstract class Triangle extends Shape {
+
+
+
+}
+----------------------------------------------------------------------------------------
+A class can be abstract even without any abstract methods.
+--------------------------------------------------------------------------------------------
+Abstract class should be inherited otherwise
+the abstract class is useless as we cannot create
+an object of abstract.
