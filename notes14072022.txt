@@ -174,3 +174,45 @@ A class can be abstract even without any abstract methods.
 Abstract class should be inherited otherwise
 the abstract class is useless as we cannot create
 an object of abstract.
+---------------------------------------------------------------
+If we are implementing an interface,
+we have to override all the abstract method/methods
+of an interface. If we are not doing so, we have
+declare the class as abstract.
+
+public interface Calculator {
+ int add(int a,int b);
+ int subtract(int a,int b);
+ }
+ 
+ public class Number implements Calculator{
+ 
+ public int add(int a,int b){
+ return a+b;
+ }
+ 
+ public int subtract(int a,int b){
+ return a-b;
+ }
+ 
+ 
+ 
+ }
+ 
+ ------------------------------------------
+ 
+ public abstract class Number implements Calculator{
+ 
+ public int add(int a,int b){
+ return a+b;
+ }
+  
+ 
+ }
+ 
+ public class SubNumber extends Number {
+ public int subtract(int a,int b){
+ return a-b;
+ }
+ 
+ }

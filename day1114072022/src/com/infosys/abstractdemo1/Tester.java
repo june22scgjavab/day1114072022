@@ -45,5 +45,19 @@ public class Tester {
 		System.out.println(area);
 		
 	}
+	
+	private static void displayArea(Triangle t) {
+		float area=t.calculateArea();
+		System.out.println(area);
+		
+	}
+	
+	private static void displayArea(Rectangle r) {
+		float area=r.calculateArea();
+		System.out.println(area);
+		
+	}
+
+
 
 }
