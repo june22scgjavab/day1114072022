@@ -8,7 +8,7 @@ public class Tester {
 	    System.out.println(calc.add(4, 5));
 	    System.out.println(calc.subtract(5, 1));
 	    System.out.println(calc.multiply(4, 5));
-	    System.out.println(calc.divide(0, 0));
+	    System.out.println(calc.divide(10, 2));
 	}  
 
 }

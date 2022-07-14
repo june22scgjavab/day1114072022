@@ -5,25 +5,25 @@ public class Number implements ICalculator3 {
 	@Override
 	public int add(int a, int b) {
 		// TODO Auto-generated method stub
-		return 0;
+		return a+b;
 	}
 
 	@Override
 	public int subtract(int a, int b) {
 		// TODO Auto-generated method stub
-		return 0;
+		return a-b;
 	}
 
 	@Override
 	public int divide(int a, int b) {
 		// TODO Auto-generated method stub
-		return 0;
+		return a/b;
 	}
 
 	@Override
 	public int multiply(int a, int b) {
 		// TODO Auto-generated method stub
-		return 0;
+		return a*b;
 	}
 
 	@Override
